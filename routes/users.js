@@ -21,6 +21,7 @@ router.get('/me',auth, async(req,res) => {
         error:false,
         message:"logged user information",
         data:{
+            id:user.id,
             name:user.name,
             email:user.email,
             phone:user.phone,
@@ -52,6 +53,7 @@ router.post('/',async(req,res)=>{
 
 
     user = new User({
+        id:new mongoose.Types.ObjectId(),
         name:req.body.name,
         email:req.body.email,
         password:req.body.password,
@@ -71,6 +73,7 @@ router.post('/',async(req,res)=>{
     error:false,
     message:"Data send successfully",
     data:{
+        id: new mongoose.Types.ObjectId(),
         name:req.body.name,
         email:req.body.email,
         phone:req.body.phone,

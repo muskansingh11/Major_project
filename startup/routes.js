@@ -1,6 +1,6 @@
-
 const users = require('../routes/users');
 const auth =  require('../routes/auth');
+//const donor = require("../routes/donor")
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const multer = require('multer');
@@ -17,6 +17,7 @@ module.exports = function(app)
     
     app.use('/user',users);
     app.use('/auth',auth); 
+    
 
 
 }
