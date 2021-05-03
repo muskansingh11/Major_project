@@ -18,8 +18,8 @@ router.post('/',async(req,res)=>{
         id:new mongoose.Types.ObjectId(),
         name:req.body.name,
         phone:req.body.phone,
-        location:req.body.location,
-        bloodGroup:req.body.bloodGroup
+        location:req.body.location.split(" ").join("").toUpperCase(),
+        bloodGroup:req.body.bloodGroup.toUpperCase()
         
     });
 
@@ -35,8 +35,8 @@ router.post('/',async(req,res)=>{
         id:new mongoose.Types.ObjectId(),
         name:req.body.name,
         phone:req.body.phone,
-        location:req.body.location,
-        bloodGroup:req.body.bloodGroup
+        location:req.body.location.split(" ").join("").toUpperCase(),
+        bloodGroup:req.body.bloodGroup.toUpperCase()
 
     }}
 
@@ -45,5 +45,7 @@ router.post('/',async(req,res)=>{
     
     
 })
+
+
 
 module.exports  = router;
